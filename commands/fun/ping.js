@@ -6,6 +6,12 @@ module.exports = {
     .setDescription("Replies with Pong!"),
   category: "fun",
   async execute(interaction) {
-    await interaction.reply("Pong!");
+    const sent = await interaction.reply({
+      content: "🏓⚪...",
+      fetchReply: true,
+    });
+    await interaction.editReply(
+      `...⚪🏓: ${sent.createdTimestamp - interaction.createdTimestamp}ms`
+    );
   },
 };

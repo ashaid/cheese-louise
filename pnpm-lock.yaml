@@ -11,6 +11,9 @@ dependencies:
   hot-esm:
     specifier: ^1.6.0
     version: 1.6.0
+  undici:
+    specifier: ^5.22.1
+    version: 5.22.1
 
 devDependencies:
   eslint:
