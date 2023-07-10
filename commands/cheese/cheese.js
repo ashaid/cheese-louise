@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require("discord.js");
-const wait = require("node:timers/promises").setTimeout;
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { dogPic } = require("../../api/getText");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -8,10 +8,33 @@ module.exports = {
   category: "cheese",
   async execute(interaction) {
     await interaction.deferReply();
-    await wait(4000);
+    const attatchment = await dogPic();
+
+    const embed = new EmbedBuilder()
+      .setColor(0xefff00)
+      .setTitle("COTD")
+      .setImage(attatchment.url)
+      .setAuthor({
+        name: "tony",
+        iconURL: "https://i.imgur.com/AfFp7pu.png",
+        url: "https://discord.js.org",
+      })
+      .setTimestamp()
+      .addFields(
+        { name: "Regular field title", value: "Some value here" },
+        { name: "\u200B", value: "\u200B" },
+        { name: "Inline field title", value: "Some value here", inline: true },
+        { name: "Inline field title", value: "Some value here", inline: true },
+        { name: "Inline field title", value: "Some value here", inline: true }
+      )
+      .setFooter({
+        text: "Some footer text here",
+        iconURL: "https://i.imgur.com/AfFp7pu.png",
+      })
+      .setDescription("Cheese of the Day");
+
     await interaction.editReply({
-      content: "WIP",
-      fetchReply: true,
+      embeds: [embed],
     });
   },
 };
