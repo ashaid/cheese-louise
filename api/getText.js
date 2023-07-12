@@ -1,9 +1,19 @@
-const { request } = require("undici");
+const { tokenKey } = require("../config.json");
 
-async function dogPic() {
-  const dogResult = await request("https://random.dog/woof.json");
-  let response = await dogResult.body.json();
-  return response;
+async function queryText(data) {
+  const response = await fetch(
+    "https://api.nlpcloud.io/v1/gpu/finetuned-gpt-neox-20b/generation",
+    {
+      headers: {
+        Authorization: tokenKey,
+      },
+      method: "POST",
+      body: JSON.stringify(data),
+    }
+  );
+  const result = await response.json();
+  const text = JSON.stringify(result.generated_text);
+  return text;
 }
 
-module.exports = { dogPic };
+module.exports = { queryText };

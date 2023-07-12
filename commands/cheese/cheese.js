@@ -3,7 +3,7 @@ const {
   EmbedBuilder,
   AttachmentBuilder,
 } = require("discord.js");
-const { dogPic } = require("../../api/getText");
+const { queryText } = require("../../api/getText");
 const { queryImage } = require("../../api/getImage");
 
 module.exports = {
@@ -18,11 +18,15 @@ module.exports = {
     // channel stuff
 
     await interaction.deferReply();
-    const attatchment = await dogPic();
-    const attatchment2 = await queryImage(
-      "screenshot of cheese in sid meier's civilization video game"
+    const text = await queryText({
+      text: "Historical verbose description of Bleu d'Auvergne cheese",
+      max_length: 100,
+    });
+    console.log(text.length);
+    const imageStream = await queryImage(
+      "realistic photograph of bleu d'auvergne cheese"
     );
-    const buffer = Buffer.from(attatchment2);
+    const buffer = Buffer.from(imageStream);
     let aData = {
       description: "image",
       name: "undefined.png",
@@ -40,11 +44,11 @@ module.exports = {
       })
       .setTimestamp()
       .addFields(
-        { name: "Regular field title", value: "Some value here" },
-        { name: "\u200B", value: "\u200B" },
-        { name: "Inline field title", value: "Some value here", inline: true },
-        { name: "Inline field title", value: "Some value here", inline: true },
-        { name: "Inline field title", value: "Some value here", inline: true }
+        { name: "Bleu d'Auvergne Cheese", value: text },
+        { name: "\u200B", value: "\u200B" }
+        // { name: "Inline field title", value: "Some value here", inline: true },
+        // { name: "Inline field title", value: "Some value here", inline: true },
+        // { name: "Inline field title", value: "Some value here", inline: true }
       )
       .setFooter({
         text: "Some footer text here",
