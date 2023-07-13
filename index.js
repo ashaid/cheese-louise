@@ -5,12 +5,7 @@ const { token } = require("./config.json");
 const { createServer } = require("./api/createServer");
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-const app = createServer(client);
-
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+createServer(client);
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, "commands");
