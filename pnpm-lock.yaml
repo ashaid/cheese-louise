@@ -14,6 +14,9 @@ dependencies:
   hot-esm:
     specifier: ^1.6.0
     version: 1.6.0
+  simple-json-db:
+    specifier: ^2.0.0
+    version: 2.0.0
   undici:
     specifier: ^5.22.1
     version: 5.22.1
@@ -1267,6 +1270,11 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.2.1
       object-inspect: 1.12.3
+    dev: false
+
+  /simple-json-db@2.0.0:
+    resolution: {integrity: sha512-oTh7gFQzqAe0E8RN3EkisPo0CojkzcKCKibTcJncg0yt47hWTaNwwjX/FsxfXSTDxfMjBFXFVnZe/EskAlJr7w==}
+    engines: {node: '>=10.0'}
     dev: false
 
   /sort-on@5.2.0:
