@@ -1,5 +1,6 @@
 const express = require("express");
 const { getChannels } = require("./getChannels");
+const { execute } = require("../data/cheeseEmbed");
 
 const createServer = (client) => {
   const app = express();
@@ -10,12 +11,13 @@ const createServer = (client) => {
     console.log(`Express is listening on ${port}`);
   });
 
-  app.post("/deployCheese", (req, res) => {
+  app.post("/deployCheese", async (req, res) => {
     const channels = getChannels();
     for (let key in channels) {
-      console.log(key);
       const channelToSendMessage = client.channels.cache.get(key);
-      channelToSendMessage.send(req.body.cheese);
+      const cheese = req.body.cheese;
+      let msg = await execute(cheese);
+      channelToSendMessage.send({ embeds: [msg[0]], files: [msg[1]] });
     }
     res.status(200).send("POST Recieved");
   });
