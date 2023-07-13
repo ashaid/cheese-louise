@@ -13,26 +13,13 @@ module.exports = {
 
     await interaction.reply("⏳ Writing to database ⌛");
 
-    for (let i = 0; i < 5; i++) {
-      await wait(300);
-      await interaction.editReply("⌛ Writing to database ⏳");
-      await wait(300);
-      await interaction.editReply("⏳ Writing to database ⌛");
-    }
-
-    const db = new JSONdb("./data/servers.json");
+    const db = new JSONdb("./data/servers.json", { syncOnWrite: true });
     const channelExistsInDb = db.has(channelId);
 
     let message;
     channelExistsInDb
-      ? (db.delete(channelId), (message = "removed channel from database ✅"))
-      : ((message = "added chanel to database ✅"),
-        db.set(channelId, serverName));
-
-    try {
-      await interaction.followUp("✅ Successfully " + message);
-    } catch {
-      await interaction.followUp("Something went wrong.");
-    }
+      ? (db.delete(channelId), (message = "Removed channel from database"))
+      : ((message = "Added chanel to database"), db.set(channelId, serverName));
+    await interaction.editReply(message);
   },
 };
