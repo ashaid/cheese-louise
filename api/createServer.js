@@ -13,10 +13,9 @@ const createServer = (client) => {
 
   app.post("/deployCheese", async (req, res) => {
     const channels = getChannels();
+    let msg = await execute(req.body.cheese);
     for (let key in channels) {
       const channelToSendMessage = client.channels.cache.get(key);
-      const cheese = req.body.cheese;
-      let msg = await execute(cheese);
       channelToSendMessage.send({ embeds: [msg[0]], files: [msg[1]] });
     }
     res.status(200).send("POST Recieved");
