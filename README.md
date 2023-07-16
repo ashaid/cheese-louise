@@ -27,7 +27,7 @@
 <br />
 <div align="center">
 
-<h3 align="center">cheese-louisee</h3>
+<h3 align="center">cheese-louise</h3>
 
   <p align="center">
     discord bot that sends daily cheese
@@ -45,8 +45,6 @@
 Fun side project I developed for my friends.
 
 This bot will send a cheese of the day embed to your channel of choosing with custom generated text and an image.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
@@ -102,17 +100,26 @@ Setup a crontab to ping the express server in your given interval
 * * * * * cd /path/to/cheese-louise/api/ && /path/to/node generateCheese.js
 ```
 
+Deploy your commands to serverId in config.json
+
+```sh
+node deploy_commands.js
+```
+
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
 Use the slash command /ping to confirm the bot is setup and connected.
+
 ![Example Ping](https://cdn.discordapp.com/attachments/1056814482199937025/1129932568205209660/image.png)
 
 Use the /subscribe command to add the channel to the database.
+
 ![Example Database Add](https://cdn.discordapp.com/attachments/1056814482199937025/1129932809977483294/image.png)
 
 Wait for your cheese to be sent!
+
 ![Example Cheese](https://cdn.discordapp.com/attachments/1056814482199937025/1129932314474983425/image.png)
 
 <!-- ROADMAP -->
@@ -131,8 +138,6 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
