@@ -38,32 +38,6 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
@@ -78,8 +52,6 @@ This bot will send a cheese of the day embed to your channel of choosing with cu
 
 - [discordjs][discordjs-url]
 - [express][express-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -130,24 +102,20 @@ Setup a crontab to ping the express server in your given interval
 * * * * * cd /path/to/cheese-louise/api/ && /path/to/node generateCheese.js
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
 Use the slash command /ping to confirm the bot is setup and connected.
 ![Example Ping](https://cdn.discordapp.com/attachments/1056814482199937025/1129932568205209660/image.png)
+
 Use the /subscribe command to add the channel to the database.
 ![Example Database Add](https://cdn.discordapp.com/attachments/1056814482199937025/1129932809977483294/image.png)
+
 Wait for your cheese to be sent!
 ![Example Cheese](https://cdn.discordapp.com/attachments/1056814482199937025/1129932314474983425/image.png)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ROADMAP -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
@@ -172,12 +140,6 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the MIT License. See `LICENSE.md` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGMENTS -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -188,7 +150,7 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 [issues-shield]: https://img.shields.io/github/issues/ashaid/cheese-louise.svg?style=for-the-badge
 [issues-url]: https://github.com/ashaid/cheese-louisee/issues
 [license-shield]: https://img.shields.io/github/license/ashaid/cheese-louise.svg?style=for-the-badge
-[license-url]: https://github.com/ashaid/cheese-louise/blob/master/LICENSE.txt
+[license-url]: https://github.com/ashaid/cheese-louise/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/anthony-shaidaee
 [discordjs-url]: https://github.com/discordjs/discord.js
