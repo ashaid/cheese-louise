@@ -1,19 +1,18 @@
-const { tokenKey } = require("../config.json");
+const { chatgptToken } = require("../config.json");
+const { Configuration, OpenAIApi } = require("openai");
 
 async function queryText(data) {
-  const response = await fetch(
-    "https://api.nlpcloud.io/v1/gpu/finetuned-gpt-neox-20b/generation",
-    {
-      headers: {
-        Authorization: tokenKey,
-      },
-      method: "POST",
-      body: JSON.stringify(data),
-    }
-  );
-  const result = await response.json();
-  const text = JSON.stringify(result.generated_text);
-  return text;
+  const configuration = new Configuration({
+    apiKey: chatgptToken,
+  });
+  const openai = new OpenAIApi(configuration);
+
+  const chatCompletion = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: data }],
+  });
+  const msg = chatCompletion.data.choices[0].message.content;
+  return msg;
 }
 
 module.exports = { queryText };
