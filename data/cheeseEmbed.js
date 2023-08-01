@@ -5,7 +5,7 @@ const { queryImage } = require("../api/getImage");
 module.exports = {
   async execute(data) {
     let text = await queryText(
-      `Historical verbose description of ${data} cheese.`
+      `Give me a short description of ${data} cheese and 3 fun facts about it.`
     );
     const imageStream = await queryImage(
       `realistic photograph of ${data} cheese`
