@@ -13,7 +13,7 @@ const createServer = (client) => {
 
   app.post("/deployCheese", async (req, res) => {
     const channels = getChannels();
-    let msg = await execute(req.body.cheese);
+    let msg = await execute(req.body.cheese, req.body.style);
     for (let key in channels) {
       const channelToSendMessage = client.channels.cache.get(key);
       channelToSendMessage.send({ embeds: [msg[0]], files: [msg[1]] });

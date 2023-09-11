@@ -3,26 +3,26 @@ const { queryText } = require("../api/getText");
 const { queryImage } = require("../api/getImage");
 
 module.exports = {
-  async execute(data) {
+  async execute(cheese, style) {
     let text = await queryText(
-      `Give me a short description of ${data} cheese and 3 fun facts about it.`
+      `Give me a short description of ${cheese} cheese and 3 fun facts about it. In the following style: ${style}`
     );
     const imageStream = await queryImage(
-      `realistic photograph of ${data} cheese`
+      `realistic photograph of ${cheese} cheese`
     );
     const buffer = Buffer.from(imageStream);
 
     const file = new AttachmentBuilder(buffer, {
-      description: `${data} image`,
+      description: `${cheese} image`,
       name: "undefined.png",
     });
     const embed = new EmbedBuilder()
       .setColor("Random")
-      .setTitle(bold(data))
+      .setTitle(bold(cheese))
       .setImage("attachment://undefined.png")
       .setTimestamp()
       .setFooter({
-        text: "🧀 🧀 🧀 🧀 🧀",
+        text: `🧀 🧀 🧀 style: ${style} 🧀 🧀 🧀`,
       })
       .setDescription(text);
     return [embed, file];
