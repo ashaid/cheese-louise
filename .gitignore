@@ -2,3 +2,5 @@ node_modules
 .env
 config.json
 /data/servers.json
+/data/selected_cheeses.txt
+/data/selected_styles.txt
