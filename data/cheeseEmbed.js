@@ -16,6 +16,8 @@ module.exports = {
       description: `${cheese} image`,
       name: "undefined.png",
     });
+    console.log(text)
+    console.log(file)
     const embed = new EmbedBuilder()
       .setColor("Random")
       .setTitle(bold(cheese))
