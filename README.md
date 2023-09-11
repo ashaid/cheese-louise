@@ -69,7 +69,7 @@ This bot will send a cheese of the day embed to your channel of choosing with cu
 
 ### Installation
 
-1. Get a free API Keys from discord, hugging face, nlpcloud, and your discord server id
+1. Get  API Keys from discord, hugging face, chatgpt, and your discord server id
 2. Clone the repo
    ```sh
    git clone https://github.com/ashaid/cheese-louise.git
@@ -85,7 +85,7 @@ This bot will send a cheese of the day embed to your channel of choosing with cu
    "token": "...",
    "clientId": "...",
    "bearerKey": "Bearer ...",
-   "tokenKey": "Token ...",
+   "chatgptToken:" "",
    "guildId": "..."
    }
    ```
